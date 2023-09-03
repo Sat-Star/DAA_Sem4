@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 int parent[20] = {0}, min, mincost = 0, ne = 1, n, cost[20][20], a, b, i, j, u, v;
-
+// ne = no. of edges
 // Kruskal Function
 void kruskal()
 {
