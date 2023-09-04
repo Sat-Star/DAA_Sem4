@@ -33,7 +33,7 @@ int main()
     int n, a[10][10], source, s[10], i, j;
     printf("Enter the number of nodes:\n");
     scanf("%d", &n);
-    printf("Enter the adjacency matrix:\n", n);
+    printf("Enter the adjacency matrix:\n");
     for (i = 1; i <= n; i++)
         for (j = 1; j <= n; j++)
             scanf("%d", &a[i][j]);
