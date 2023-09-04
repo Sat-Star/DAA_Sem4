@@ -59,3 +59,40 @@ int main()
     if (flag == 0)
         printf("No subset possible.\n");
 }
+
+//-----------------------------------------------------------------------------END-----------------------------------
+//Easier program
+
+#include <stdio.h>
+int arr[10], vis[10], target, n;
+int flag = 0;
+void fun(int i, int sum) {
+    if (sum == target) {
+        flag = 1;
+        printf("{ ");
+        for (int j = 0; j < i; ++j) {
+            if (vis[j]) {
+                printf("%d ", arr[j]);
+            }
+        }
+        printf("}\n");
+        return;
+    }
+    if (i == n) return;
+
+    vis[i] = 1;
+    fun(i + 1, sum + arr[i]);
+    vis[i] = 0;
+    fun(i + 1, sum);
+}
+
+int main() {
+    scanf("%d", &n);
+    for (int i = 0; i < n; ++i) {
+        scanf("%d", &arr[i]);
+    }
+    scanf("%d", &target);
+    fun(0, 0);
+    if (flag == 0) printf("Subset not Possible\n");
+    return 0;
+}
